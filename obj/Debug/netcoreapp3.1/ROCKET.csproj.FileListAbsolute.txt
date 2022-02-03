@@ -1,0 +1,13 @@
+D:\demc\ROCKET\bin\Debug\netcoreapp3.1\ROCKET.exe
+D:\demc\ROCKET\bin\Debug\netcoreapp3.1\ROCKET.deps.json
+D:\demc\ROCKET\bin\Debug\netcoreapp3.1\ROCKET.runtimeconfig.json
+D:\demc\ROCKET\bin\Debug\netcoreapp3.1\ROCKET.runtimeconfig.dev.json
+D:\demc\ROCKET\bin\Debug\netcoreapp3.1\ROCKET.dll
+D:\demc\ROCKET\bin\Debug\netcoreapp3.1\ROCKET.pdb
+D:\demc\ROCKET\obj\Debug\netcoreapp3.1\ROCKET.csprojAssemblyReference.cache
+D:\demc\ROCKET\obj\Debug\netcoreapp3.1\ROCKET.AssemblyInfoInputs.cache
+D:\demc\ROCKET\obj\Debug\netcoreapp3.1\ROCKET.AssemblyInfo.cs
+D:\demc\ROCKET\obj\Debug\netcoreapp3.1\ROCKET.csproj.CoreCompileInputs.cache
+D:\demc\ROCKET\obj\Debug\netcoreapp3.1\ROCKET.dll
+D:\demc\ROCKET\obj\Debug\netcoreapp3.1\ROCKET.pdb
+D:\demc\ROCKET\obj\Debug\netcoreapp3.1\ROCKET.genruntimeconfig.cache

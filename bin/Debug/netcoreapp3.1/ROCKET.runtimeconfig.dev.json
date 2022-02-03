@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Mozart\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Mozart\\.nuget\\packages"
+    ]
+  }
+}
