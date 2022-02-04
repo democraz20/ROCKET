@@ -9,11 +9,12 @@ namespace ROCKET{
                 string input = Console.ReadLine().ToLower();
                 //debugging params
                 if (input == "dir"){input = "dir ";}
-                string[] cmd = input.Split(" ");
+                string[] cmd = input.Split(" "); 
                 if (cmd[0] == "clear"){Console.Clear();}
+                else if (cmd[0] == "exit"){Environment.Exit(0);}
                 else if (cmd[0] == ""){}
                 else if (cmd[0] == "dir"){
-                    if (cmd[1] == ""){Console.WriteLine("yey");}
+                    dir.directory(cmd[1]);
                 }
                 else {
                     //checks if packages dir exists
