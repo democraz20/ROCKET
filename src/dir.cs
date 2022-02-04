@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Diagnostics;
+using System.Linq;
 
 namespace ROCKET{
     class dir{
@@ -12,7 +14,7 @@ namespace ROCKET{
 
             foreach(var folder in folders){
                 string folder1 = folder;
-                folder1 = folder1.Replace(path,"");
+                folder1 = folder1.Replace(path,"\\");
                 Console.WriteLine("[+]"+folder1);
             }
             foreach(var file in files){
@@ -29,9 +31,35 @@ namespace ROCKET{
                 string result = String.Format("{0:0.##} {1}", len, sizes[order]);
                 string file1 = file;
                 file1 = file1.Replace(path,"");
-                Console.WriteLine("   "+file1+"     "+result);
+                Console.WriteLine("   "+file1+"     "+result+"     "+creationTime);
                 //Console.WriteLine("   "+file1+"   "+creationTime);
             }
+        }
+        public static int RenameFile(string path, string newName)
+        {
+            FileInfo file = new FileInfo(path);
+            DirectoryInfo directory = new DirectoryInfo(path);
+            if (!file.Exists && !directory.Exists)
+            {
+                return -1;
+            }
+            if (file.Exists)
+            {
+                file.MoveTo(file.DirectoryName + @"\" + newName);
+                Console.WriteLine("File Renamed.");
+            }
+            else if (directory.Exists)
+            {
+                directory.MoveTo(directory.Parent.FullName + @"\" + newName);
+                Console.WriteLine("Folder Renamed.");
+            }
+            return 0;
+        }
+
+        public static void LaunchFile(string path)
+        {
+        FileInfo file = new FileInfo(path);
+        new Process { StartInfo = new ProcessStartInfo(path) { UseShellExecute = true } }.Start();
         }
     }
 }
