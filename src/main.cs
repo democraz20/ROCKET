@@ -8,12 +8,20 @@ namespace ROCKET{
         public static void center(){
             for(;;){
                 try{
-                    Console.Write(Directory.GetCurrentDirectory() + ">");
+                    string cd = System.IO.File.ReadAllText(@"c:\rocket\configs\startup\cd");
+                    if(cd == string.Empty){
+                        Console.Write(Directory.GetCurrentDirectory()+">");
+                    }
+                    else{
+                        Console.Write(System.IO.File.ReadAllText(@"c:\rocket\configs\startup\cd")+">");
+                    }
+                    //Console.Write(Directory.GetCurrentDirectory() + ">");
                     string input = Console.ReadLine().ToLower();
                     //debugging params
                     if (input == "dir"){input = "dir ";}
                     else if (input == "open"){input = "open ";}
                     else if (input == "rename"){input = "rename  ";}
+                    else if (input == "cd"){input = "cd ";}
                     string[] cmd = input.Split(" "); 
                     if (cmd[0] == "clear"){Console.Clear();}
                     else if (cmd[0] == "exit"){Environment.Exit(0);}
@@ -26,6 +34,9 @@ namespace ROCKET{
                     }
                     else if (cmd[0] == "rename"){
                         dir.RenameFile(cmd[1], cmd[2]);
+                    }
+                    else if (cmd[0] == "cd"){
+                        dir.cd(cmd[1]);
                     }
                     else {
                         //checks if packages dir exists

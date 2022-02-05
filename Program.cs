@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace ROCKET
 {
@@ -8,6 +9,8 @@ namespace ROCKET
         {
             for(;;){
             try{
+                //startup
+                System.IO.File.WriteAllText(@"C:\ROCKET\configs\startup\cd", string.Empty);
                 Console.WriteLine("Hello World!");
                 main.center();
             }

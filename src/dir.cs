@@ -11,10 +11,11 @@ namespace ROCKET{
             }
             string[] files = Directory.GetFiles(path);
             string[] folders = Directory.GetDirectories(path);
+            Console.WriteLine("\n Directory of "+path+"\n");
 
             foreach(var folder in folders){
                 string folder1 = folder;
-                folder1 = folder1.Replace(path,"\\");
+                folder1 = folder1.Replace(path+"\\","");
                 Console.WriteLine("[+]"+folder1);
             }
             foreach(var file in files){
@@ -30,10 +31,11 @@ namespace ROCKET{
                 }
                 string result = String.Format("{0:0.##} {1}", len, sizes[order]);
                 string file1 = file;
-                file1 = file1.Replace(path,"");
-                Console.WriteLine("   "+file1+"     "+result+"     "+creationTime);
+                file1 = file1.Replace(path+"\\","");
+                Console.WriteLine("   "+file1+"   |   "+result+"   |   "+creationTime);
                 //Console.WriteLine("   "+file1+"   "+creationTime);
             }
+            Console.WriteLine();
         }
         public static int RenameFile(string path, string newName)
         {
@@ -60,6 +62,11 @@ namespace ROCKET{
         {
         FileInfo file = new FileInfo(path);
         new Process { StartInfo = new ProcessStartInfo(path) { UseShellExecute = true } }.Start();
+        }
+
+        public static void cd(string path)
+        {
+            System.IO.File.WriteAllText(@"C:\rocket\configs\startup\cd",path);
         }
     }
 }
