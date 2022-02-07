@@ -6,9 +6,7 @@ using System.Linq;
 namespace ROCKET{
     class dir{
         public static void directory(string path){
-            if(path == ""){
-                path = Directory.GetCurrentDirectory();
-            }
+            path = getcd();
             string[] files = Directory.GetFiles(path);
             string[] folders = Directory.GetDirectories(path);
             Console.WriteLine("\n Directory of "+path+"\n");
@@ -66,7 +64,20 @@ namespace ROCKET{
 
         public static void cd(string path)
         {
-            System.IO.File.WriteAllText(@"C:\rocket\configs\startup\cd",path);
+            if (!Directory.Exists(path)){
+                main.error("The system cannot find the path specified");
+            }
+            else{
+                System.IO.File.WriteAllText(@"C:\rocket\configs\startup\cd",path);
+            }
+        }
+        public static string getcd(){
+            if(System.IO.File.ReadAllText(@"c:\rocket\configs\startup\cd") == string.Empty){
+                return Directory.GetCurrentDirectory().ToString();
+            }
+            else {
+                return System.IO.File.ReadAllText(@"c:\rocket\configs\startup\cd");
+            }
         }
     }
 }

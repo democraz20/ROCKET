@@ -23,7 +23,7 @@ namespace ROCKET{
                     else if (input == "rename"){input = "rename  ";}
                     else if (input == "cd"){input = "cd ";}
                     string[] cmd = input.Split(" "); 
-                    if (cmd[0] == "clear"){Console.Clear();}
+                    if (cmd[0] == "cls"){Console.Clear();}
                     else if (cmd[0] == "exit"){Environment.Exit(0);}
                     else if (cmd[0] == ""){}
                     else if (cmd[0] == "dir"){
