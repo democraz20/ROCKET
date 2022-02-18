@@ -23,6 +23,8 @@ namespace ROCKET{
                     else if (input == "rename"){input = "rename  ";}
                     else if (input == "cd"){input = "cd ";}
                     string[] cmd = input.Split(" "); 
+
+                    //main 
                     if (cmd[0] == "cls"){Console.Clear();}
                     else if (cmd[0] == "exit"){Environment.Exit(0);}
                     else if (cmd[0] == ""){}
@@ -38,6 +40,10 @@ namespace ROCKET{
                     else if (cmd[0] == "cd"){
                         dir.cd(cmd[1]);
                     }
+                    else if (cmd[0] == "settings"){
+                        settings.main(cmd[1]);
+                    }
+                    
                     else {
                         //checks if packages dir exists
                         //if yes execute path in file
