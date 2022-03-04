@@ -43,6 +43,9 @@ namespace ROCKET{
                     else if (cmd[0] == "settings"){
                         settings.main(cmd[1]);
                     }
+                    else if (cmd[0] == "uptime"){
+                        uptime.sysuptime();
+                    }
                     
                     else {
                         //checks if packages dir exists
