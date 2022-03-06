@@ -6,6 +6,9 @@ using System.Linq;
 namespace ROCKET{
     class main{
         public static void center(){
+            Console.WriteLine(DateTime.Now.ToString("h:mm:ss"));
+            string uptimestart = DateTime.Now.ToString("h mm ss");
+            //Console.WriteLine(uptimestart);
             for(;;){
                 try{
                     string cd = System.IO.File.ReadAllText(@"c:\rocket\configs\startup\cd");
