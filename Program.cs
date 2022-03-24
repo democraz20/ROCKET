@@ -21,7 +21,7 @@ namespace ROCKET
             }
             catch(Exception e)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine(e.Message+"\n");
                 Console.WriteLine("BSOD type error");
                 Console.ForegroundColor = ConsoleColor.White;

@@ -15,7 +15,7 @@ namespace ROCKET{
             	$"{time.Minutes} minutes " +
             	$"{time.Seconds} seconds");
         }
-        public static void prouptime(string start){
+        public static void appuptime(string start){
             string[] usestart = start.Split(" ");
             int strh = Convert.ToInt32(usestart[0]);
             int strm = Convert.ToInt32(usestart[1]);

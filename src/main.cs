@@ -21,10 +21,21 @@ namespace ROCKET{
                     //Console.Write(Directory.GetCurrentDirectory() + ">");
                     string input = Console.ReadLine().ToLower();
                     //debugging params
-                    if (input == "dir"){input = "dir ";}
-                    else if (input == "open"){input = "open ";}
-                    else if (input == "rename"){input = "rename  ";}
-                    else if (input == "cd"){input = "cd ";}
+                    switch(input){
+                        case "dir":
+                            input="dir ";
+                            break;
+                        case "open":
+                            input="open ";
+                            break;
+                        case "rename":
+                            input="rename ";
+                            break;
+                        case "cd":
+                            input="cd ";
+                            break;
+                    }
+
                     string[] cmd = input.Split(" "); 
 
                     //main 
