@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ROCKET{
     class main{
-        public static async void center(){
+        public static void center(){
             Console.WriteLine(DateTime.Now.ToString("h:mm:ss"));
             string uptimestart = DateTime.Now.ToString("h mm ss");
             //Console.WriteLine(uptimestart);
@@ -29,7 +29,7 @@ namespace ROCKET{
                             input="open ";
                             break;
                         case "rename":
-                            input="rename ";
+                            input="rename  ";
                             break;
                         case "cd":
                             input="cd ";
@@ -57,8 +57,11 @@ namespace ROCKET{
                     else if (cmd[0] == "uptime"){
                         uptime.sysuptime();
                     }
-                    else if (cmd[0] == "test"){
+                    else if (cmd[0] == "update"){
                         updates.minor();
+                    }
+                    else if (cmd[0] == "free"){
+                        memory.free();
                     }
                     
                     else {
