@@ -13,7 +13,7 @@ namespace ROCKET{
                 try{
                     string cd = System.IO.File.ReadAllText(@"c:\rocket\configs\startup\cd");
                     if(cd == string.Empty){
-                        Console.Write(Directory.GetCurrentDirectory()+">");
+                        Console.Write("R | "+Directory.GetCurrentDirectory()+">");
                     }
                     else{
                         Console.Write(System.IO.File.ReadAllText(@"c:\rocket\configs\startup\cd")+">");
@@ -39,7 +39,7 @@ namespace ROCKET{
                     string[] cmd = input.Split(" "); 
 
                     //main 
-                    if (cmd[0] == "cls"){Console.Clear();}
+                    if (cmd[0] == "cls"||cmd[0]=="clear"){Console.Clear();}
                     else if (cmd[0] == "exit"){Environment.Exit(0);}
                     else if (cmd[0] == ""){}
                     else if (cmd[0] == "dir"){
@@ -54,16 +54,21 @@ namespace ROCKET{
                     else if (cmd[0] == "cd"){
                         dir.cd(cmd[1]);
                     }
-                    else if (cmd[0] == "uptime"){
+                    else if (cmd[0] == "sysuptime"){
                         uptime.sysuptime();
-                    }
-                    else if (cmd[0] == "update"){
-                        updates.minor();
                     }
                     else if (cmd[0] == "free"){
                         memory.free();
                     }
-                    
+                    else if (cmd[0] == "notepad"){
+                        open.Windows(cmd[0]);
+                    }
+                    else if (cmd[0] == "file"){
+                        open.Windows(cmd[0]);
+                    }
+                    //will be switching to case switch later refering to the else if code above
+
+
                     else {
                         //checks if packages dir exists
                         //if yes execute path in file

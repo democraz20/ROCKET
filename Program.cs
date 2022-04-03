@@ -10,14 +10,22 @@ namespace ROCKET
         {
             for(;;){
             try{
-                //startup
-                System.IO.File.WriteAllText(@"C:\ROCKET\configs\startup\cd", string.Empty);
-                Console.OutputEncoding = System.Text.Encoding.Unicode;
+                //check if OS is windows
+                if (Environment.OSVersion.ToString().Contains("Windows")){
+                    System.IO.File.WriteAllText(@"C:\ROCKET\configs\startup\cd", string.Empty);
+                    Console.OutputEncoding = System.Text.Encoding.Unicode;
                 
 
-                //actual start
-                Console.WriteLine("Hello World!");
-                main.center();
+                    //actual start
+                    Console.WriteLine("Hello World!");
+                    main.center();
+                }
+                else{
+                    Console.Write("This program is only compatible with Windows. \n press any key to exit.");
+                    Console.ReadLine();
+                }
+                //startup
+
             }
             catch(Exception e)
             {
